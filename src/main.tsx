@@ -13,6 +13,7 @@ import CurrentPost from "./pages/current-post/CurrentPost"
 import UserProfile from "./pages/user-profile/UserProfile"
 import Followers from "./pages/followers/Followers"
 import Following from "./pages/following/Following"
+import { AuthGuard } from "./features/user/AuthGuard"
 
 const router = createBrowserRouter([
   {
@@ -51,7 +52,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Provider store={store}>
       <ThemeProvider>
+        <AuthGuard>
           <RouterProvider router={router} />
+        </AuthGuard>
       </ThemeProvider>
     </Provider>
   </React.StrictMode>,

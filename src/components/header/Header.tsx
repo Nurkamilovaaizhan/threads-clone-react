@@ -26,7 +26,7 @@ export const Header = () => {
                   variant="flat"
                   className="gap-2"
                 >
-                  <CiLogout /> <span>Выйти</span>
+                  <CiLogout /> <span>Log out</span>
                 </Button>
             </NavbarItem>
           </NavbarContent>
