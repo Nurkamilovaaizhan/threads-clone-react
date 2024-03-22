@@ -12,11 +12,11 @@ export const Layout = () => {
   const user = useSelector(selectUser)
   const navigate = useNavigate()
 
-  // useEffect(() => {
-  //   if (!isAuthenticated) {
-  //     navigate("/auth")
-  //   }
-  // }, [])
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate("/auth")
+    }
+  }, [])
 
   return (
     <>

@@ -8,12 +8,12 @@ import "./index.css"
 import { ThemeProvider } from "./components/theme-provider"
 import Auth from "./pages/auth/Auth"
 import Posts from "./pages/posts/Posts"
-import CurrentPost from "./pages/current-post/CurrentPost"
 import UserProfile from "./pages/user-profile/UserProfile"
 import Followers from "./pages/followers/Followers"
 import Following from "./pages/following/Following"
 import { AuthGuard } from "./features/user/AuthGuard"
 import { Layout } from "./components/layout/Layout"
+import { CurrentPost } from "./pages/current-post/CurrentPost"
 
 const router = createBrowserRouter([
   {
