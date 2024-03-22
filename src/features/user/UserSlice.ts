@@ -1,33 +1,33 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { userApi } from "../../app/services/userApi"
-import { User } from "../../app/types"
-import { RootState } from "../../app/store"
+import type { User } from "../../app/types"
+import type { RootState } from "../../app/store"
 
 interface InitialState {
-    user: User | null
-    isAuthenticated: boolean
-    users: User[] | null
-    current: User | null
-    token?: string
-  }
+  user: User | null
+  isAuthenticated: boolean
+  users: User[] | null
+  current: User | null
+  token?: string
+}
 
 const initialState: InitialState = {
-    user: null,
-    isAuthenticated: false,
-    users: null,
-    current: null,
-  }
+  user: null,
+  isAuthenticated: false,
+  users: null,
+  current: null,
+}
 
-  const slice = createSlice({
-    name: "user",
+const slice = createSlice({
+  name: "user",
   initialState,
   reducers: {
     logout: () => initialState,
     resetUser: (state) => {
       state.user = null
     },
-},
-extraReducers: (builder) => {
+  },
+  extraReducers: (builder) => {
     builder
       .addMatcher(userApi.endpoints.login.matchFulfilled, (state, action) => {
         state.token = action.payload.token
@@ -46,11 +46,11 @@ extraReducers: (builder) => {
   },
 })
 
-export const { logout, resetUser } = slice.actions;
+export const { logout, resetUser } = slice.actions
 export default slice.reducer
 
 export const selectIsAuthenticated = (state: RootState) =>
-state.user.isAuthenticated
+  state.user.isAuthenticated
 
 export const selectCurrent = (state: RootState) => state.user.current
 
