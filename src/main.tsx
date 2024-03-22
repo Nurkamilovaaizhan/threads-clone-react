@@ -6,7 +6,6 @@ import { store } from "./app/store"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import "./index.css"
 import { ThemeProvider } from "./components/theme-provider"
-import Layout from "./components/layout/Layout"
 import Auth from "./pages/auth/Auth"
 import Posts from "./pages/posts/Posts"
 import CurrentPost from "./pages/current-post/CurrentPost"
@@ -14,6 +13,7 @@ import UserProfile from "./pages/user-profile/UserProfile"
 import Followers from "./pages/followers/Followers"
 import Following from "./pages/following/Following"
 import { AuthGuard } from "./features/user/AuthGuard"
+import { Layout } from "./components/layout/Layout"
 
 const router = createBrowserRouter([
   {
